@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication //，声明这个一个服务提供者。
 public class SecurityApplication    {
 
-	
 	public static void main(String[] args) {
 		SpringApplication.run(SecurityApplication.class, args);
 	}
