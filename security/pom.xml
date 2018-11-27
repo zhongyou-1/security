@@ -68,7 +68,6 @@
          <!-- 集成 cloud  end  -->
       </dependencies>
 
- 
   <build>
 		<plugins>
 			<plugin>
