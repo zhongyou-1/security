@@ -16,23 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoServer {
 
-	@GetMapping("server-hello")
-	public String get(@PathVariable String id) {
+	@GetMapping("hello")
+	public String hello( ) {
 
+		 System.out.println(" 服务提供者 get  进来了。。。");
 	/***
 		 * 具体业务逻辑
 		 */
 
-		return "hello----我是服务提供者 get " + id.toString();
+		return "hello----我是服务提供者 get";
 	}
 
-	@PostMapping("server-post")
-	public String post(@PathVariable String id) {
-
-		/***
-		 * 具体业务逻辑
-		 */
-
-		return "hello----我是服务提供者 post " + id.toString();
-	}
+ 
 }
