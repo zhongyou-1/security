@@ -67,6 +67,16 @@
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
          <!-- 集成 cloud  end  -->
+         
+         <!-- 引入相关自定义jar  start  -->
+          <dependency>
+          <groupId>com.qidian</groupId>
+          <artifactId>entity</artifactId>
+          <version>0.0.1-SNAPSHOT</version>
+          </dependency>
+          
+    
+          <!-- 引入相关 自定义jar end  -->
       </dependencies>
 
   <build>
@@ -77,7 +87,6 @@
 				   <configuration>
 					<fork>true</fork> <!-- 该设置开启打包jar,否则可能导致打包失败 -->
 				</configuration>
-				   
 			</plugin>
 		</plugins>
 	</build>

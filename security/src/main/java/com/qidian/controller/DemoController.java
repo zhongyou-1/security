@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+ 
 import com.qidian.entity.User;
+import com.qidian.entity.comm.Result;
+import com.qidian.entity.comm.Results;
 
 /**
  * 
@@ -36,41 +39,40 @@ public class DemoController {
 
 	@RequestMapping("/hello")
 	@ResponseBody
-	public String hello() {
+	public Result hello() {
 		logger.debug("访问getUserByName,Name={}");
 		List<User> list = manager.createQuery("select o from User o ", User.class).getResultList();
 		logger.error("----------info," + list.size());
-		return "name is 大家好 ";
+		return  Results.SUCCESS.build(list);
 	}
 
 	@RequestMapping("/initdata")
 	@ResponseBody
-	public String initData() {
+	public Result initData() {
         
         User user = new User();
         user.setName("管理员");
         user.setLoginName("admin");
         userDAO.insert(user);
         Assert.notNull(user.getId(),"用户ID不能为空！");
-		return "success";
+    	return  Results.SUCCESS.build();
 	}
 	
+ 
 	@RequestMapping("/update")
 	@ResponseBody
-	public String update() {
+	public Result update(String key ,String updateName) {
         
-        User user = manager.find(User.class, Long.parseLong("15"));
-        user.setName("update By");
+        User user = manager.find(User.class, Long.parseLong(key));
+        user.setName(updateName);
         userDAO.update(user);
-		return "success";
+    	return  Results.SUCCESS.build();
 	}
 	@RequestMapping("/remove")
 	@ResponseBody
-	public String remove() {
-        
-        User user = manager.find(User.class, Long.parseLong("16"));//指定key
-       
+	public Result remove(String key ) {
+        User user = manager.find(User.class, Long.parseLong(key));//指定key
         userDAO.remove(user);
-		return "success";
+    	return  Results.SUCCESS.build();
 	}
 }
