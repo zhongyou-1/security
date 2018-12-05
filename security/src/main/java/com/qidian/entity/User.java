@@ -17,6 +17,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name="boot_user")
 public class User implements Serializable {
     
+	
     /** 
     * @Fields serialVersionUID : TODO
     */ 
