@@ -23,7 +23,7 @@ import com.qidian.entity.comm.Results;
  * @title 测试类
  * @author Xrt rong tao
  * @version 1.0.0
- * @since jdk1.8
+ * @since jdk1.8  d
  * @创建时间：2018年11月27日下午7:40:15 @功能描述：
  */
 @RestController
