@@ -1,7 +1,6 @@
 package com.qidian.server;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,5 +26,16 @@ public class DemoServer {
 		return "hello----我是服务提供者 get";
 	}
 
+	
+	@PostMapping("helloPost")
+	public String helloPost( ) {
+
+		 System.out.println(" 服务提供者 Post  进来了。。。");
+	/***
+		 * 具体业务逻辑
+		 */
+
+		return "hello----我是服务提供者 Post";
+	}
  
 }
