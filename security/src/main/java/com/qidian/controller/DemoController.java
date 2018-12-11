@@ -1,5 +1,6 @@
 package com.qidian.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
- 
 import com.qidian.entity.User;
 import com.qidian.entity.comm.Result;
 import com.qidian.entity.comm.Results;
@@ -41,7 +41,7 @@ public class DemoController {
 	@ResponseBody
 	public Result hello() {
 		logger.debug("访问getUserByName,Name={}");
-		List<User> list = manager.createQuery("select o from User o ", User.class).getResultList();
+		List<User> list = manager.createQuery("select * from Note", User.class).getResultList();
 		logger.error("----------info," + list.size());
 		return  Results.SUCCESS.build(list);
 	}
@@ -50,11 +50,11 @@ public class DemoController {
 	@ResponseBody
 	public Result initData() {
         
-        User user = new User();
+       /* User user = new User();
         user.setName("管理员");
         user.setLoginName("admin");
         userDAO.insert(user);
-        Assert.notNull(user.getId(),"用户ID不能为空！");
+        Assert.notNull(user.getId(),"用户ID不能为空！");*/
     	return  Results.SUCCESS.build();
 	}
 	
@@ -64,10 +64,11 @@ public class DemoController {
 	public Result update(String key ,String updateName) {
         
         User user = manager.find(User.class, Long.parseLong(key));
-        user.setName(updateName);
+//        user.setName(updateName);
         userDAO.update(user);
     	return  Results.SUCCESS.build();
 	}
+	
 	@RequestMapping("/remove")
 	@ResponseBody
 	public Result remove(String key ) {
