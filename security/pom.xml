@@ -77,6 +77,13 @@
           
     
           <!-- 引入相关 自定义jar end  -->
+          
+          <!-- 增加feign-httpclient -->
+   <dependency>
+     <groupId>io.github.openfeign</groupId>
+     <artifactId>feign-httpclient</artifactId>
+  </dependency>
+          
       </dependencies>
 
   <build>

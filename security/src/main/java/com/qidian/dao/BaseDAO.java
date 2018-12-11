@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+
 @Component("baseDAO")
 @Qualifier("baseDAO")
 public class BaseDAO {
@@ -108,5 +109,10 @@ public class BaseDAO {
 		}
 		return list.get(0);
 	}
+	
+	public <T> T find(Class<T> entityClass,long id){
+		return manager.find(entityClass, id);
+	}
+	
 
 }

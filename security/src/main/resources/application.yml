@@ -14,7 +14,7 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
@@ -25,6 +25,19 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://47.105.58.164:9096/eureka/ #eureka服务注册地址 服务注册中心的配置内容，指定服务注册中心的Url    
-
+      defaultZone: http://172.31.95.215:9121/eureka/ #eureka服务注册地址 服务注册中心的配置内容，指定服务注册中心的Url    
+      
+      # feign配置
+ 
+#feign:
+#  hystrix: # 在feign中开启hystrix功能，默认情况下feign不开启hystrix功能
+#    enabled: true
+#  httpclient: ## 配置httpclient线程池
+#    enabled: true
+#  okhttp:
+#    enabled: false
+#      
+#compression:
+#    request:
+#      mime-types: false
  
