@@ -3,7 +3,7 @@ package com.qidian.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
-import java.math.BigInteger;
+import java.math.BigInteger;  
 
 
 /**

@@ -24,7 +24,7 @@ spring:
  
 eureka:
   client:
-    serviceUrl:
+    serviceUrl:  
       defaultZone: http://172.31.95.215:9121/eureka/ #eureka服务注册地址 服务注册中心的配置内容，指定服务注册中心的Url    
 
  

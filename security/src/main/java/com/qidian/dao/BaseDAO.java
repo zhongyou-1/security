@@ -16,9 +16,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 
+
 @Component("baseDAO")
 @Qualifier("baseDAO")
-public class BaseDAO {
+public class BaseDAO {  
 	protected static Logger log = LoggerFactory.getLogger(BaseDAO.class);
 
 	@PersistenceContext

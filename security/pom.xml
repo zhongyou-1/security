@@ -68,7 +68,7 @@
         </dependency>
          <!-- 集成 cloud  end  -->
          
-         <!-- 引入相关自定义jar  start  -->
+<!-- 引入相关自定义jar  start  -->
           <dependency>
           <groupId>com.qidian</groupId>
           <artifactId>entity</artifactId>

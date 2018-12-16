@@ -74,6 +74,6 @@ public class DemoController {
 	public Result remove(String key ) {
         User user = manager.find(User.class, Long.parseLong(key));//指定key
         userDAO.remove(user);
-    	return  Results.SUCCESS.build();
+    	return  Results.SUCCESS.build();  
 	}
 }

@@ -78,7 +78,7 @@ public class TNoteType implements Serializable {
 	}
 
 	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
+		this.uuid = uuid ;
+	}    
 
 }
